@@ -37,20 +37,35 @@ Feature: YourLogo registration
     Then A phone number missing error is displayed
 
   Scenario:
-    Given Enter valid email
-    And Enter valid password
-    And Click on sign in button
-    And Click on My Wishlist button
-    And Add new wishlist name
-    And Save new wishlist
-    And Logout
+    Given Valid email entered
+    And Valid password entered
+    And Sign in button clicked
+    And My Wishlist button clicked
+    And New wishlist name added
+    And New wishlist saved
+    And Logged out
 
   Scenario:
-    Given Enter valid email
-    And Enter valid password
-    And Click on sign in button
-    And Click on T-shirts
-    And Select list view
+    Given Valid email entered
+    And Valid password entered
+    And Sign in button clicked
+    And Clicked on T-shirts
+    And List view selected
+    And Item added to cart
+    And Proceed to checkout clicked
+    And Logged out
+
+  Scenario:
+    Given Valid email entered
+    And Valid password entered
+    And Sign in button clicked
+    And My addresses button clicked
+    And Update address clicked
+    And City field is cleared
+    And Submit new address clicked
+    Then A city missing error is displayed
+    And Logged out
+
 
 
 

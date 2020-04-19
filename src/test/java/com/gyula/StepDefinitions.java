@@ -144,50 +144,86 @@ public class StepDefinitions {
 
     }
 
-    @Given("Enter valid email")
+    @Given("Valid email entered")
     public void enterValidEmail() {
         driver.findElement(By.id("email")).sendKeys("validemail@gyula.hu");
     }
 
-    @And("Enter valid password")
+    @And("Valid password entered")
     public void enterValidPassword() {
         driver.findElement(By.id("passwd")).sendKeys("jelszo");
     }
 
-    @And("Click on sign in button")
+    @And("Sign in button clicked")
     public void clickOnSignInButton() {
         driver.findElement(By.id("SubmitLogin")).click();
     }
 
-    @And("Click on My Wishlist button")
+    @And("My Wishlist button clicked")
     public void clickOnMyWishlistButton() {
         driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div[2]/ul/li/a")).click();
     }
 
-    @And("Add new wishlist name")
+    @And("New wishlist name added")
     public void addNewWishlistName() {
         driver.findElement(By.id("name")).sendKeys("My new wishlist");
     }
 
-    @And("Save new wishlist")
+    @And("New wishlist saved")
     public void saveNewWishlist() {
         driver.findElement(By.id("submitWishlist")).click();
     }
 
-    @And("Logout")
+    @And("Logged out")
     public void logout() {
         driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")).click();
     }
 
 
-    @And("Click on T-shirts")
+    @And("Clicked on T-shirts")
     public void clickOnTShirts() {
         driver.findElement(By.xpath("//*[@id=\"block_top_menu\"]/ul/li[3]/a")).click();
     }
 
-    @And("Select list view")
+    @And("List view selected")
     public void addATShirtToCart() {
         driver.findElement(By.xpath("//*[@id=\"list\"]/a")).click();
     }
 
+    @And("Item added to cart")
+    public void addToCart() {
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li/div/div/div[3]/div/div[2]/a[1]")).click();
+    }
+
+    @And("Proceed to checkout clicked")
+    public void proceedToCheckout() {
+        driver.findElement(By.xpath("/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a")).click();
+    }
+
+    @And("My addresses button clicked")
+    public void clickMyAddressesButton() {
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div[1]/ul/li[3]/a")).click();
+    }
+
+    @And("Update address clicked")
+    public void clickToUpdateAddress() {
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/div[1]/div/div/ul/li[9]/a[1]")).click();
+    }
+
+    @And("City field is cleared")
+    public void addEmptyCity() {
+            driver.findElement(By.id("city")).clear();
+    }
+
+    @And("Submit new address clicked")
+    public void submitNewAddress() {
+        driver.findElement(By.id("submitAddress")).click();
+    }
+
+    @Then("A city missing error is displayed")
+    public void aDifferentPhoneNumberMissingErrorIsDisplayed() {
+        List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"center_column\"]/div/div/ol/li"));
+        Assert.assertNotEquals(0, elements.size());
+        Assert.assertEquals("city is required.", elements.get(0).getText());
+    }
 }
