@@ -173,4 +173,21 @@ public class StepDefinitions {
     public void saveNewWishlist() {
         driver.findElement(By.id("submitWishlist")).click();
     }
+
+    @And("Logout")
+    public void logout() {
+        driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[2]/a")).click();
+    }
+
+
+    @And("Click on T-shirts")
+    public void clickOnTShirts() {
+        driver.findElement(By.xpath("//*[@id=\"block_top_menu\"]/ul/li[3]/a")).click();
+    }
+
+    @And("Select list view")
+    public void addATShirtToCart() {
+        driver.findElement(By.xpath("//*[@id=\"list\"]/a")).click();
+    }
+
 }

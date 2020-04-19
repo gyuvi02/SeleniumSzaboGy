@@ -43,7 +43,14 @@ Feature: YourLogo registration
     And Click on My Wishlist button
     And Add new wishlist name
     And Save new wishlist
+    And Logout
 
+  Scenario:
+    Given Enter valid email
+    And Enter valid password
+    And Click on sign in button
+    And Click on T-shirts
+    And Select list view
 
 
 
