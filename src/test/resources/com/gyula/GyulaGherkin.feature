@@ -34,7 +34,16 @@ Feature: YourLogo registration
     And State added
     And Postal code added
     And Register button clicked
-    Then A phone number missing error is displyed
+    Then A phone number missing error is displayed
+
+  Scenario:
+    Given Enter valid email
+    And Enter valid password
+    And Click on sign in button
+    And Click on My Wishlist button
+    And Add new wishlist name
+    And Save new wishlist
+
 
 
 

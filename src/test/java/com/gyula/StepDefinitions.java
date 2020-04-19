@@ -114,7 +114,7 @@ public class StepDefinitions {
         driver.findElement(By.id("submitAccount")).click();
     }
 
-    @Then("A phone number missing error is displyed")
+    @Then("A phone number missing error is displayed")
     public void aPhoneNumberMissingErrorIsDisplyed() {
         List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"center_column\"]/div/ol/li"));
         Assert.assertNotEquals(0, elements.size());
@@ -142,5 +142,35 @@ public class StepDefinitions {
         Assert.assertNotEquals(0, elements.size());
         Assert.assertEquals("Invalid email address.", elements.get(0).getText());
 
+    }
+
+    @Given("Enter valid email")
+    public void enterValidEmail() {
+        driver.findElement(By.id("email")).sendKeys("validemail@gyula.hu");
+    }
+
+    @And("Enter valid password")
+    public void enterValidPassword() {
+        driver.findElement(By.id("passwd")).sendKeys("jelszo");
+    }
+
+    @And("Click on sign in button")
+    public void clickOnSignInButton() {
+        driver.findElement(By.id("SubmitLogin")).click();
+    }
+
+    @And("Click on My Wishlist button")
+    public void clickOnMyWishlistButton() {
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div[2]/ul/li/a")).click();
+    }
+
+    @And("Add new wishlist name")
+    public void addNewWishlistName() {
+        driver.findElement(By.id("name")).sendKeys("My new wishlist");
+    }
+
+    @And("Save new wishlist")
+    public void saveNewWishlist() {
+        driver.findElement(By.id("submitWishlist")).click();
     }
 }
