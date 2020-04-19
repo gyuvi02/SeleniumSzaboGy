@@ -1,0 +1,8 @@
+[0418/203617.113:ERROR:process_info.cc(359)] UncheckedAllocate
+[0418/203617.135:ERROR:file_io.cc(134)] WriteFile: Nincs elég hely a lemezen. (0x70)
+[0418/203617.136:ERROR:file_io.cc(134)] WriteFile: Nincs elég hely a lemezen. (0x70)
+[0418/203617.136:ERROR:file_io.cc(134)] WriteFile: Nincs elég hely a lemezen. (0x70)
+[0418/203617.136:ERROR:file_io.cc(134)] WriteFile: Nincs elég hely a lemezen. (0x70)
+[0418/203617.136:ERROR:file_io.cc(134)] WriteFile: Nincs elég hely a lemezen. (0x70)
+[0418/203617.136:ERROR:file_io.cc(134)] WriteFile: Nincs elég hely a lemezen. (0x70)
+[0418/203617.136:ERROR:file_io.cc(134)] WriteFile: Nincs elég hely a lemezen. (0x70)
